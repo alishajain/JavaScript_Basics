@@ -8,30 +8,32 @@ var divBtn = document.querySelector("#div");
 var submitBtn = document.querySelector("#submit");
 var output = document.querySelector("#output");
 
-function setOutput(y) {
+var a = input1.value;
+var b = input2.value;
+
+function setOutput() {
     console.log(input1.value);
     console.log(input2.value);
-    output.innerText = y(input1, input2); 
 }
 
-function add(a, b) {
-    return a + b;
+function add() {
+    output.innerText = a+b;
 }
 
-function sub(a, b) {
-    return a - b;
+function sub() {
+    output.innerText = a-b;
 }
 
-function mul(a, b) {
-    return a * b;
+function mul() {
+    output.innerText = a*b;
 }
 
-function div(a, b) {
-    return a / b;
+function div() {
+    output.innerText = a/b;
 }
 
-addBtn.addEventListener("click", setOutput(add));
-subBtn.addEventListener("click", setOutput(sub));
-mulBtn.addEventListener("click", setOutput(mul));
-divBtn.addEventListener("click", setOutput(div));
+addBtn.addEventListener("click", add);
+subBtn.addEventListener("click", sub);
+mulBtn.addEventListener("click", mul);
+divBtn.addEventListener("click", div);
 submitBtn.addEventListener("click", setOutput);
