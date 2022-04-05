@@ -8,28 +8,25 @@ var divBtn = document.querySelector("#div");
 var submitBtn = document.querySelector("#submit");
 var output = document.querySelector("#output");
 
-var a = input1.value;
-var b = input2.value;
-
 function setOutput() {
     console.log(input1.value);
     console.log(input2.value);
 }
 
 function add() {
-    output.innerText = a+b;
+    output.innerText = Number(input1.value) + Number(input2.value);
 }
 
 function sub() {
-    output.innerText = a-b;
+    output.innerText = Number(input1.value) - Number(input2.value);
 }
 
 function mul() {
-    output.innerText = a*b;
+    output.innerText = Number(input1.value) * Number(input2.value);
 }
 
 function div() {
-    output.innerText = a/b;
+    output.innerText = Number(input1.value) / Number(input2.value);
 }
 
 addBtn.addEventListener("click", add);
