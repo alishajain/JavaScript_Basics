@@ -6,13 +6,20 @@ var name2 = document.querySelector("#name_2");
 var age2 = document.querySelector("#age_2");
 var submitBtn = document.querySelector("#submit");
 var output = document.querySelector("#output");
+var person;
 
 function setOutput(){
     if(Number(age1.value) > Number(age2.value)){
-        output.innerText = name1.value;
+        person = name1.value;
     } else {
-        output.innerText = name2.value;
+        person = name2.value;
     }
+    console.log(person);
+    return person;
 }
 
-submitBtn.addEventListener("click", setOutput);
+function displayOutput(){
+    output.innerText = setOutput();
+}
+
+submitBtn.addEventListener("click", displayOutput);
