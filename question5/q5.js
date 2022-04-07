@@ -48,26 +48,17 @@ function setOutput(){
     console.log(total4);
     console.log(total5);
 
-    if(total1 > total2 && total1 > total3 && total1 > total4 && total1 > total5){
-        highest = total1;
-    } else if(total2 > total3 && total2 > total4 && total2 > total5) {
-        highest = total2;
-    } else if(total3 > total4 && total3 > total5) {
-        highest = total3;
-    } else if(total4 > total5) {
-        highest = total4;
-    }else {
-        highest = total5;
-    }
-
-    output.innerText = highest;
-    avg.innerText = (total1 + total2 + total3 + total4 + total5)/5;
-
     const total = [total1, total2, total3, total4, total5]
     var largest = 0;
     for (var i = 0; i < 5; i++){
-
+        if(total[i] > largest) {
+            largest = total[i];
+        }
     }
+
+    output.innerText = largest;
+    avg.innerText = (total1 + total2 + total3 + total4 + total5)/5;
+
 }
 
 submitBtn.addEventListener("click", setOutput);
