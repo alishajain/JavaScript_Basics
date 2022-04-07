@@ -10,12 +10,18 @@ function setOutput(){
     output.innerText = input.value;
 }
 
+var size = 16;
+
 function increaseBy2() {
-    output.style.fontSize =  "18px";
+    size += 2;
+    console.log(size);
+    output.style.fontSize = "${size}px";
 }
 
 function decreaseBy2() {
-    output.style.fontSize = "14px";
+    size -= 2;
+    console.log(size);
+    output.style.fontSize = '${size}px';
 }
 
 incBtn.addEventListener("click", increaseBy2);

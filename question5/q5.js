@@ -62,6 +62,12 @@ function setOutput(){
 
     output.innerText = highest;
     avg.innerText = (total1 + total2 + total3 + total4 + total5)/5;
+
+    const total = [total1, total2, total3, total4, total5]
+    var largest = 0;
+    for (var i = 0; i < 5; i++){
+
+    }
 }
 
 submitBtn.addEventListener("click", setOutput);
