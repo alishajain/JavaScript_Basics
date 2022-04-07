@@ -15,13 +15,13 @@ var size = 16;
 function increaseBy2() {
     size += 2;
     console.log(size);
-    output.style.fontSize = "${size}px";
+    output.style.fontSize = `${size}px`;
 }
 
 function decreaseBy2() {
     size -= 2;
     console.log(size);
-    output.style.fontSize = '${size}px';
+    output.style.fontSize = `${size}px`;
 }
 
 incBtn.addEventListener("click", increaseBy2);
