@@ -5,12 +5,13 @@ var decBtn = document.querySelector("#decrease");
 var submitbtn = document.querySelector("#submit");
 var output = document.querySelector("#output");
 
+var textSize = window.getComputedStyle(input);
+var size = Number(textSize.getPropertyValue('font-size').substring(0,7));
 function setOutput(){
+    console.log(size);
     console.log(input.value);
     output.innerText = input.value;
 }
-
-var size = 16;
 
 function increaseBy2() {
     size += 2;
