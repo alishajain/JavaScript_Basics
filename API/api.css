@@ -1,0 +1,42 @@
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+  border-style: none;
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+}
+
+textarea {
+  width: 90vw;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10px;
+  border-width: 3px;
+}
+
+#input {
+  border-color: dodgerblue;
+}
+
+#input:focus {
+  border-color: blue;
+}
+
+#output {
+  border-color: lightcoral;
+}
+
+#output:focus {
+  border-color: red;
+}
