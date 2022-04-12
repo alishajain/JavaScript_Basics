@@ -1,8 +1,5 @@
 //Lucky Birthday
 
-//var day = document.querySelector("#day");
-//var month = document.querySelector("#month");
-//var yr = document.querySelector("#year");
 var lno = document.querySelector("#lno");
 var btn = document.querySelector("#submit");
 var result = document.querySelector("#result");
