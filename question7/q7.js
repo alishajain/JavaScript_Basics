@@ -15,6 +15,7 @@ function getResult() {
     dob = date_sum[0] + date_sum[1] + date_sum[2];
     dob = Number(dob);
     console.log(dob);
+    
     while(dob >=1 ){
         date += dob%10;
         dob = Math.floor( dob/10);
