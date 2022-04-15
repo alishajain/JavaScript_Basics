@@ -18,45 +18,68 @@ function isPalindrome(dob) {
     return count;
 }
 
-function closestSmallPalindrome(dob) {
-    var sPNum = dob;
+function isValid(d, m, y){
+    if(m < 1 || m > 12){
+        return false;
+    } 
+    if(d < 1 || d >31){
+        return false;
+    }
+
+    if(m === 2){
+        if(isLeap(y)){
+            return (d < 29);
+        } else {
+            return (d < 28);
+        }
+    }
+
+    if(m === 4 || m === 6 || m === 9 || m === 11) {
+        return (d < 30);
+    }
+
+    return true;
+}
+function closestLargePalindrome(date_sum) {
+    var yr, month, day, mm, yy, dd;
+
+    while(count === 1){
+        yr = date_sum.split("");
+        yy = Number(yr[0] + yr[1] + yr[2] + yr[3]);
+
+        month = yr[3] + yr [2];
+        mm = Number(month);
+
+        day = yr[1] + yr[0];
+        dd = Number(day);
+            if(isValid(dd, mm, yy)){
+                console.log(yr[0] + yr[1] + yr[2] + yr[3] + "-" +month + "-" + day);
+                count = 0;
+            } else {
+                yy++;
+                date_sum = yy.toString();
+        }
+    }
     
-    while(count === 1) {
-        sPNum++;
-        isPalindrome(sPNum.toString());
-    }
-    console.log(sPNum);
-    count = 1;
-    return sPNum;
 }
 
-function closestLargePalindrome(dob) {
-    var lPNum = dob;
-    while(count === 1) {
-        lPNum--;
-        isPalindrome(lPNum.toString());
-    }
-    console.log(lPNum);
-    return lPNum;
-}
+// function closestPalindrome(dob){
+//     var sP = 0, lP = 0, sPDiff, lPdiff, num;
+//     num = dob;
+//     sP = closestSmallPalindrome(num);
+//     lP = closestLargePalindrome(num);
 
-function closestPalindrome(dob){
-    var sP = 0, lP = 0, sPDiff, lPdiff, num;
-    num = dob;
-    sP = closestSmallPalindrome(num);
-    lP = closestLargePalindrome(num);
+//     sPDiff = Math.abs(sP - dob);
+//     lPdiff = Math.abs(lP - dob);
+//     console.log(sPDiff);
+//     console.log(lPdiff);
 
-    sPDiff = Math.abs(sP - dob);
-    lPdiff = Math.abs(lP - dob);
-    console.log(sPDiff);
-    console.log(lPdiff);
-
-    if(sPDiff > lPdiff){
-        return lP;
-    } else {
-        return sP;
-    }
-}
+//     if(sPDiff > lPdiff){
+//         return lP;
+//     } else {
+//         return sP;
+//     }
+// }
 
 function getResult(){
     var date_sum = bday.value.split("-");
@@ -66,13 +89,15 @@ function getResult(){
     console.log(dob);
     
     result = isPalindrome(dob);
-    dob = Number(dob);
+   // dob = Number(dob);
     if(result === 0 ){
         output.innerHTML = "Your birthday is a palindrome!!!";
     } else {
         output.innerHTML = "Your birthday is not a palindrome!!!";
-        newPNum = closestPalindrome(dob.toString());
-        console.log(newPNum);
+        closestLargePalindrome(date_sum[0]);
+      //  newPNum = closestPalindrome(Number(dob));
+        //console.log(newPNum);
+        //toDate(newPNum.toString());
     }
 }
 
