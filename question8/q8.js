@@ -123,8 +123,8 @@ function getResult(){
     if(result === 0 ){
         output.innerHTML = "Your birthday is a palindrome!!!";
     } else {
-        output.innerHTML = "Your birthday is not a palindrome!!!";
-        console.log(closestPalindrome(date_sum));
+        newPNum = closestPalindrome(date_sum);
+        output.innerHTML = "Your birthday is not a palindrome!!! \n The closest Palindrome date is " + newPNum;
     }
 }
 
